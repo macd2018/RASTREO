@@ -1,4 +1,4 @@
-/* 
+/*
 Codigo Tesis Modularizado.ino
 * Asignatura: Trabajo de Grado II
 * Archivo: Codigo Tesis Modularizado.ino
@@ -12,6 +12,8 @@ Codigo Tesis Modularizado.ino
                    de acuerdo a los tiempos de envio requeridos por el cliente
   ESCUELA DE INGENIERIA CIVIL Y GEOMATICA --LABORATORIO DE GEOPOSICIONAMIENTO-- PROGRAMA DE INGENIERIA TOPOGRAFICA
 */
+
+/* Hola */
 
 #include <SoftwareSerial.h>
 #include <LiquidCrystal.h>
@@ -34,7 +36,7 @@ void setup()                    //Configuraciones Iniciales
   //////////////////////////////Configuracion Inicial Modulo SIM808///////////////////////
   Serial.begin(9600);
   SIM808.begin(9600);
-  pinMode(LED,OUTPUT); 
+  pinMode(LED,OUTPUT);
   pinMode(BOTON,INPUT);
   //Configuracion Inicial para Comunicacion con el Modulo SIM 808
   enviarAT("AT+IPR=9600",250);
@@ -147,7 +149,7 @@ void loop()
     LCD.setCursor(0,0);
     LCD.print(latichar);LCD.print(horachr);LCD.print(":");LCD.print(minchr);LCD.print(":");LCD.print(segchr);
     LCD.setCursor(0,1);
-    LCD.print(longichar);LCD.print(",");LCD.print("E=m");LCD.print(cantsat);   
+    LCD.print(longichar);LCD.print(",");LCD.print("E=m");LCD.print(cantsat);
   }
 }
 
@@ -287,7 +289,7 @@ void llamarUsuario()
   }
   else
   {
-   // 
+   //
   }
 }
 
@@ -308,7 +310,7 @@ bool consultarEstado()
     cont1 = 0;
     cont2 = 0;
     tiemposms2 = 10800000;
-    return false; 
+    return false;
   }
 }
 
@@ -394,7 +396,7 @@ void arreglarFecha()
 
 void escucharBoton()
 {
-  val = digitalRead(BOTON); 
+  val = digitalRead(BOTON);
   if ((val == HIGH) && (old_val == LOW))
   {
     state = 1-state;
@@ -410,4 +412,3 @@ void escucharBoton()
   }
   old_val = val;
 }
-
