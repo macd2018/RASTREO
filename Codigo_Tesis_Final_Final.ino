@@ -14,6 +14,7 @@ Codigo Tesis Modularizado.ino
 */
 
 /* Hola */
+/* Esta es una prueba*/
 
 #include <SoftwareSerial.h>
 #include <LiquidCrystal.h>
